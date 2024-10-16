@@ -1,4 +1,3 @@
-import * as React from 'react';
 import './App.scss';
 import NavBar from './components/Navbar';
 import Home from './pages/Home';

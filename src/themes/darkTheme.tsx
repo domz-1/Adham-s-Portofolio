@@ -69,26 +69,6 @@ const darkTheme = createTheme({
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',  // Darker shadow for cards
           borderRadius: '12px',
         },
-        title: {
-          fontWeight: 700,
-          fontSize: '1.5rem',
-          color: '#F5F5F5',  // Light gray for card title
-        },
-        content: {
-          color: '#F5F5F5',  // Light gray for card content
-        },
-        footer: {
-          color: '#F5F5F5',  // Light gray for card footer
-        },
-        header: {
-          color: '#F5F5F5',  // Light gray for card header
-        },
-        action: {
-          color: '#F5F5F5',  // Light gray for card action
-        },
-        media: {
-          color: '#F5F5F5',  // Light gray for card media
-        },
       },
     },
     MuiPaper: {
