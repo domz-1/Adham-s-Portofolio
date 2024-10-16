@@ -8,7 +8,7 @@ import Ecommerce from '../assets/Projects/ecom.png'
 import GuessGame from '../assets/Projects/guessgame.jpg'
 export default function Work () {
   return (
-    <AltStack className="work" id="">
+    <AltStack className="work" id="work">
         <SectionTitle title="Work" body="My Recent Projects"/>
         <ProjectCard 
         Title="Free Blog"

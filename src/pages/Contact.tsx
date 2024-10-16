@@ -4,7 +4,7 @@ import Social from './../components/Social';
 
     export default function Contact () {
     return (
-        <Stack className='Contact' id="">
+        <Stack className='Contact' id="contact">
             <SectionTitle title="Get In Touch" body="What’s next? Feel free to reach out to me if you're looking for a developer, have a query, or simply want to connect."/>
             <Link href="mailto:adhamabuelenin@std.mans.edu.eg">
             <Typography variant="h4">

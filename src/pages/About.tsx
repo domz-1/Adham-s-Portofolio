@@ -8,7 +8,7 @@ import PicTwo from '../assets/pic-2.png'
     const About = () => {
     return (
         <>
-        <AltStack className='' id=''  >
+        <AltStack className='' id='about'  >
         <SectionTitle title='About' body='Get to know me' />
         <div className='about-wrapper'>
         <Picture src={PicTwo}/>
