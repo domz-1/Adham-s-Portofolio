@@ -6,6 +6,7 @@ import { motion, MotionProps, HTMLMotionProps, AnimationDefinition } from "frame
 type MotionCardProps = Omit<CardProps, keyof MotionProps> & 
   Omit<HTMLMotionProps<"div">, keyof CardProps> & {
     onAnimationStart?: ((definition: AnimationDefinition) => void) | undefined;
+    children?: React.ReactNode;
   };
 
 // Create the motion component
