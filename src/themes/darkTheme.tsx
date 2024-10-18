@@ -65,7 +65,6 @@ const darkTheme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#111827',  // Dark gray card background
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',  // Darker shadow for cards
           borderRadius: '12px',
         },

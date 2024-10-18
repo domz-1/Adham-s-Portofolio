@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import AltStack from "./AltStarck";
+import { motion } from "framer-motion";
 
 const aboutText = `
   I'm a passionate front-end developer with a strong focus on creating clean, intuitive, and performant web applications. My journey in web development began in [insert year], and since then, I’ve been continuously learning and evolving. What I love most about front-end development is the perfect blend of creativity and logic—taking an idea from concept to a functional, visually appealing product.
@@ -13,15 +14,37 @@ const aboutText = `
   Beyond the technical side, I’m someone who thrives on problem-solving and collaborating with others to bring ideas to life. I believe that strong communication, attention to detail, and effective project management are just as important as the code itself.
 `;
 
+const Title : string = `Curious about me? Here’s a glimpse:`;
+
+
+
 export default function AboutText() {
   return (
     <AltStack className="" id="">
       <Typography variant="h2" sx={{ textAlign: 'center' }}>
-        Curious about me? Here’s a glimpse:
+        <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: .8 ,amount:.5  }}
+          >
+          {Title.split("").map((char: string, index: number) => 
+            <motion.span
+            key={char + index}>{char}</motion.span>)}
+        </motion.div>
       </Typography>
       <br />
       <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap', lineHeight: 1.5, maxWidth: '500px', margin: '0 auto', textAlign: 'center', padding: '0 30px' }}>
-        {aboutText}
+        <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: .8 , amount:.9 }}
+        >
+        {aboutText.split('').map((char,index)=>
+        <motion.span
+          key={char + index}>
+          {char}
+        </motion.span>)}
+        </motion.div>
       </Typography>
     </AltStack>
   );
