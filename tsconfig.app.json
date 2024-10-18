@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.node.json",
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -11,8 +12,12 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
+
+    /* Output */
+    "outDir": "dist",
+    "sourceMap": true,
+    "noEmit": false,
 
     /* Linting */
     "strict": true,
@@ -20,5 +25,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }
