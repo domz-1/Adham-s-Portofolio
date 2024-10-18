@@ -1,24 +1,35 @@
-import React from 'react'; // Type: React
-import { Card, CardProps } from "@mui/material"; // Card: React.ComponentType<CardProps>, CardProps: interface for Card properties
-import { motion, MotionProps } from "framer-motion"; // motion: React.ComponentType<MotionProps>, MotionProps: interface for animation properties
+import React from 'react';
+import { Card, CardProps } from "@mui/material";
+import { motion, MotionProps, HTMLMotionProps, AnimationDefinition } from "framer-motion";
 
-// Create a custom motion component for Card
-const MotionCard = motion(Card);
+// Define a custom type for the motion component that combines Card and Motion props
+type MotionCardProps = Omit<CardProps, keyof MotionProps> & 
+  Omit<HTMLMotionProps<"div">, keyof CardProps> & {
+    onAnimationStart?: ((definition: AnimationDefinition) => void) | undefined;
+  };
 
-// Define the props for the AnimatedCard component
-interface AnimatedCardProps extends CardProps, MotionProps {
-  children: React.ReactNode; // Type: React.ReactNode
+// Create the motion component
+const MotionCard = motion(Card) as React.ComponentType<MotionCardProps>;
+
+// Separate animation props from card props to avoid conflicts
+interface AnimatedCardProps {
+  children: React.ReactNode;
+  animationProps?: Partial<HTMLMotionProps<"div">>;
+  cardProps?: Omit<CardProps, keyof MotionProps>;
+  className?: string;
 }
 
-// AnimatedCard functional component
-const AnimatedCard: React.FC<AnimatedCardProps> = ({ children, ...props }) => {
-  const { animationProps, className, ...cardProps } = props;
-
+const AnimatedCard: React.FC<AnimatedCardProps> = ({
+  children,
+  animationProps = {},
+  cardProps = {},
+  className,
+}) => {
   return (
     <MotionCard
-      className="project-card"
-      {...animationProps}  
-      {...cardProps}
+      className={`project-card ${className || ''}`}
+      {...(animationProps as Partial<HTMLMotionProps<"div">>)}
+      {...(cardProps as Omit<CardProps, keyof MotionProps>)}
     >
       {children}
     </MotionCard>
